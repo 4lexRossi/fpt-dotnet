@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/fpt-Api.csproj",
-      "projectName": "fpt-Api",
-      "projectPath": "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/fpt-Api.csproj",
+      "projectUniqueName": "/home/alex/meus-projetos/fpt-dotnet/fptApi/fptApi.csproj",
+      "projectName": "fptApi",
+      "projectPath": "/home/alex/meus-projetos/fpt-dotnet/fptApi/fptApi.csproj",
       "packagesPath": "/home/alex/.nuget/packages/",
-      "outputPath": "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/obj/",
+      "outputPath": "/home/alex/meus-projetos/fpt-dotnet/fptApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/alex/.nuget/NuGet/NuGet.Config"
