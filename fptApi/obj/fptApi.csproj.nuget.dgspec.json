@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/fpt-Api.csproj": {}
+    "/home/alex/meus-projetos/fpt-dotnet/fptApi/fptApi.csproj": {}
   },
   "projects": {
-    "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/fpt-Api.csproj": {
+    "/home/alex/meus-projetos/fpt-dotnet/fptApi/fptApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/fpt-Api.csproj",
-        "projectName": "fpt-Api",
-        "projectPath": "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/fpt-Api.csproj",
+        "projectUniqueName": "/home/alex/meus-projetos/fpt-dotnet/fptApi/fptApi.csproj",
+        "projectName": "fptApi",
+        "projectPath": "/home/alex/meus-projetos/fpt-dotnet/fptApi/fptApi.csproj",
         "packagesPath": "/home/alex/.nuget/packages/",
-        "outputPath": "/home/alex/meus-projetos/fpt-dotnet/fpt-Api/obj/",
+        "outputPath": "/home/alex/meus-projetos/fpt-dotnet/fptApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/alex/.nuget/NuGet/NuGet.Config"
@@ -35,6 +35,28 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.CommandLine": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.10.4, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
