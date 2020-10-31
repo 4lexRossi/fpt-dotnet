@@ -1,5 +1,3 @@
-using System;
-using fptApi.Data;
 using fptApi.Data.Collections;
 using fptApi.Models;
 using Microsoft.AspNetCore.Cors;
@@ -38,7 +36,7 @@ namespace fptApi.Controllers
                 dto.Nome,
                 dto.SobreNome,                
                 dto.Email,               
-                dto.Senha,
+                dto.Direct,
                 dto.Id
                 );
 
@@ -66,7 +64,7 @@ namespace fptApi.Controllers
              Builders<Doador>.Update.Set("nome", dto.Nome)
                                        .Set("SobreNome", dto.SobreNome)
                                        .Set("email", dto.Email)                                       
-                                       .Set("senha", dto.Senha));
+                                       .Set("senha", dto.Direct));
             
              return Ok("Cadastro atualizado com sucesso");
         }

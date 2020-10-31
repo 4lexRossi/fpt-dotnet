@@ -1,6 +1,5 @@
-using fptApi.Data.Collections;
+using fptApi.Data.Enums;
 using System;
-using System.Collections.Generic;
 
 namespace fptApi.Models
 {
@@ -8,12 +7,14 @@ namespace fptApi.Models
     {
         public string Id { get; set; }
         public string Nome { get; set; }
-        public string NomeResponsavel { get; set; }
+        public string Sobrenome { get; set; }
         public DateTime DataNascimento { get; set; }
         public string Sexo { get; set; }
         public string Email { get; set; }
-        public string Turma { get; set; }
-        public IEnumerable<CampanhaDto> Campanhas { get; set; }
+        public string Curso { get; set; }
+        public string Semestre { get; set; }
+        public string Descricao { get; set; }
+        public ETipoUsuario ETipoUsuario { get; set; }
     }
     public class CampanhaDto
     {
@@ -27,6 +28,6 @@ namespace fptApi.Models
         public string Nome { get; set; }
         public string SobreNome { get; set; }        
         public string Email { get; set; }
-        public string Senha { get; set; }        
+        public string Direct { get; set; }        
     }
 }

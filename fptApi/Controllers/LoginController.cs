@@ -1,7 +1,5 @@
-using System;
 using fptApi.Data;
 using fptApi.Data.Collections;
-using fptApi.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
@@ -26,7 +24,7 @@ namespace fptApi.Controllers
         public ActionResult Autenticar([FromBody] Login login)
         {
             var doador = _doadoresCollection.Find(Builders<Doador>.Filter
-            .Where(_ => _.Email == login.email && _.Senha == login.senha)).FirstOrDefault();
+            .Where(_ => _.Email == login.email && _.Direct == login.direct)).FirstOrDefault();
 
             return Ok(doador);
         }

@@ -1,4 +1,3 @@
-using System;
 using fptApi.Data.Collections;
 using fptApi.Models;
 using Microsoft.AspNetCore.Cors;

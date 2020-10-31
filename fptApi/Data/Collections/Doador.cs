@@ -1,8 +1,3 @@
-using fptApi.Data.Collections;
-using fptApi.Models;
-using System;
-using System.Collections.Generic;
-
 namespace fptApi.Data.Collections
 {
     public class Doador
@@ -11,7 +6,7 @@ namespace fptApi.Data.Collections
             string nome,
             string sobreNome,            
             string email,
-            string senha,
+            string direct,
             string id
             
             )
@@ -20,14 +15,14 @@ namespace fptApi.Data.Collections
             this.Nome = nome;
             this.SobreNome = sobreNome;             
             this.Email = email;                        
-            this.Senha = senha;
+            this.Direct = direct;
         }      
         
         public string Id { get; set; }
         public string Nome { get; set; }
         public string SobreNome { get; set; }               
         public string Email { get; set; }
-        public string Senha { get; set; }
+        public string Direct { get; set; }
     }
     
 }
