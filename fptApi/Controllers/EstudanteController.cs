@@ -1,5 +1,4 @@
-using System;
-using fptApi.Data;
+using fptApi.Data.Enums;
 using fptApi.Data.Collections;
 using fptApi.Models;
 using Microsoft.AspNetCore.Cors;
@@ -35,15 +34,16 @@ namespace fptApi.Controllers
         public ActionResult SalvarEstudante([FromBody] EstudanteDto dto)
         {
             var estudante = new Estudante(
+                dto.Id,
                 dto.Nome,
-                dto.NomeResponsavel,
+                dto.Sobrenome,
                 dto.DataNascimento,
                 dto.Sexo,
                 dto.Email,
-                dto.Turma,
-                dto.Id,
-                dto.Campanhas
-                
+                dto.Curso,
+                dto.Semestre,
+                dto.Descricao,
+                dto.ETipoUsuario                
                 );
 
             _estudantesCollection.InsertOne(estudante);
@@ -67,14 +67,14 @@ namespace fptApi.Controllers
         {
             _estudantesCollection.UpdateOne(Builders<Estudante>.Filter
             .Where(_ => _.Id == dto.Id),
-             Builders<Estudante>.Update.Set("nome", dto.Nome)
-                                       .Set("dataNascimento", dto.DataNascimento)
-                                       .Set("email", dto.Email)
-                                       .Set("nomeResponsavel", dto.NomeResponsavel)
-                                       .Set("sexo", dto.Sexo)
-                                       .Set("turma", dto.Turma)
-                                       .Set("atividades", dto.Campanhas));
-            
+             Builders<Estudante>.Update.Set("nome", dto.Nome)                                                                              
+                                       .Set("nomeResponsavel", dto.Sobrenome)  
+                                       .Set("email", dto.Email)                                     
+                                       .Set("turma", dto.Curso)
+                                       .Set("turma", dto.Semestre)
+                                       .Set("turma", dto.Descricao)
+                                       );
+
              return Ok("Cadastro atualizado com sucesso");
         }
 
@@ -86,7 +86,6 @@ namespace fptApi.Controllers
             
              return Ok("Cadastro deletado com sucesso");
         }
-
        
     }
 }
