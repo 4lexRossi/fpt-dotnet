@@ -41,8 +41,10 @@ namespace fptApi.Controllers
                 dto.Sexo,
                 dto.Email,
                 dto.Curso,
+                dto.AreaCurso,
                 dto.Semestre,
                 dto.Descricao,
+                dto.ValorMensal,
                 dto.ETipoUsuario                
                 );
 
@@ -70,9 +72,11 @@ namespace fptApi.Controllers
              Builders<Estudante>.Update.Set("nome", dto.Nome)                                                                              
                                        .Set("nomeResponsavel", dto.Sobrenome)  
                                        .Set("email", dto.Email)                                     
-                                       .Set("turma", dto.Curso)
-                                       .Set("turma", dto.Semestre)
-                                       .Set("turma", dto.Descricao)
+                                       .Set("curso", dto.Curso)
+                                       .Set("areaCurso", dto.AreaCurso)
+                                       .Set("semestre", dto.Semestre)
+                                       .Set("descricao", dto.Descricao)
+                                       .Set("valorMensal", dto.ValorMensal)                                       
                                        );
 
              return Ok("Cadastro atualizado com sucesso");

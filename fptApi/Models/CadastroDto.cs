@@ -12,8 +12,10 @@ namespace fptApi.Models
         public string Sexo { get; set; }
         public string Email { get; set; }
         public string Curso { get; set; }
-        public string Semestre { get; set; }
+        public string AreaCurso { get; set; }
+        public int Semestre { get; set; }
         public string Descricao { get; set; }
+        public int ValorMensal { get; set; }
         public ETipoUsuario ETipoUsuario { get; set; }
     }
     public class CampanhaDto
