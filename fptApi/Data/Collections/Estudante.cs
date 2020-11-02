@@ -14,8 +14,10 @@ namespace fptApi.Data.Collections
             string sexo,
             string email,
             string curso,
-            string semestre,
+            string areaCurso,
+            int semestre,
             string descricao,
+            int valorMensal,
             ETipoUsuario tipoUsuario
             )
         {
@@ -26,8 +28,10 @@ namespace fptApi.Data.Collections
             this.Sexo = sexo;           
             this.Email = email;          
             this.Curso = curso;
+            this.AreaCurso = areaCurso;
             this.Semestre = semestre;
             this.Descricao = descricao;
+            this.ValorMensal = valorMensal;
             this.TipoUsuario = tipoUsuario;
         }
 
@@ -38,8 +42,10 @@ namespace fptApi.Data.Collections
         public string Sexo { get; set; }
         public string Email { get; set; }
         public string Curso { get; set; }
-        public string Semestre { get; set; }
+        public string AreaCurso { get; set; }
+        public int Semestre { get; set; }
         public string Descricao { get; set; }
+        public int ValorMensal { get; set; }
         public ETipoUsuario TipoUsuario { get; set; }
     
     }   
