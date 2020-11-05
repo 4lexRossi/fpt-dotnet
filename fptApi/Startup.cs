@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
-
+using Microsoft.OpenApi.Models;
 
 namespace fptApi
 {
@@ -17,27 +16,32 @@ namespace fptApi
 
         public IConfiguration Configuration { get; }
 
-       
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAllOrigins", GenerateCorsPolicy());
-            });
+            services.AddCors();
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pre Cadastro Api", Version = "v1" });
+            });
             services.AddSingleton<fptApi.Data.MongoDB>();
             services.AddControllers();
         }
 
-       
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-      
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Processos API V1");
+
+            });
+
+            app.UseCors(_ => _.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseCors(_ => _.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseAuthorization();
 
@@ -52,9 +56,7 @@ namespace fptApi
             var corsBuilder = new CorsPolicyBuilder();
             corsBuilder.AllowAnyHeader();
             corsBuilder.AllowAnyMethod();
-            corsBuilder.AllowAnyOrigin(); // For anyone access.
-                                          //corsBuilder.WithOrigins("http://localhost:56573"); // for a specific url. Don't add a forward slash on the end!
-
+            corsBuilder.AllowAnyOrigin();
             return corsBuilder.Build();
         }
     }
