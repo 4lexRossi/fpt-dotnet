@@ -22,7 +22,7 @@ namespace fptApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pre Cadastro Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Fpt Api", Version = "v1" });
             });
             services.AddSingleton<fptApi.Data.MongoDB>();
             services.AddControllers();
@@ -33,7 +33,7 @@ namespace fptApi
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Processos API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fpt API V1");
 
             });
 
